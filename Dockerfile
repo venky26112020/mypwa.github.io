@@ -1,2 +1,2 @@
-FROM nginx:1.17.1.alpine
-COPY /dist/pwalift /usr/share/nginx/html
+FROM nginx:latest
+COPY /dist/PWALift /usr/share/nginx/html
