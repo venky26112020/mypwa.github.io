@@ -1,17 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
+interface Quote {
+  text : string,
+  author : string
+}
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'PWALift';
-  public clickME(event: any): number {
-    const a = 5;
-    const b = 6;
-    const c = a + b;
-    console.log('hello', event);
-    return c;
+  allquotes: Quote[] = []
+  ngOnInit() {
+    this.clickME()
+  }
+  public clickME(): void {
+    fetch("https://type.fit/api/quotes")
+  .then(function(response) {
+    return response.json();
+  })
+  .then((data) => {
+    console.log(data);
+    this.allquotes = data;
+  });
   }
 }

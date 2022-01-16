@@ -14,3 +14,12 @@
         box-shadow: #ff69b400 0 0 0 16px;
     }
 }
+
+.rcorners1 {
+    padding: 20px;
+    margin: 7px;
+    padding: 10px;
+    border-radius: 50px;
+    /* border-color: red; */
+    background: #92e56f;
+}

@@ -1,7 +1,1 @@
-<h1>Hello PWa</h1>
-<h3>Bandi Venkata Krishna Reddy{{title}}</h3>
-<h4>{{title}}Hello Krishna</h4>
-<h5>Hello Krijsna Test</h5>
-<button (click)="clickME($event)">click Me</button><br>
-<span class='live'></span>
-<div>Krishna Its sleeping time</div>
+<div *ngFor='let quote of allquotes' class="rcorners1">{{quote?.text}}--{{quote?.author}} </div>
