@@ -625,15 +625,17 @@ export class NameFormatComponent implements OnInit {
     div && div.appendChild(content);
   }
   public callingFunction() {
-    let allChar = "ABCDEFGHI JKLMNOPQRS TUVWXYZ "
+    let allChar = "WISH YOU MANY MORE HAPPY RETURN OF THE DAY "
     let i, subDiv:HTMLDivElement= document.createElement("div");
     subDiv.style.display = "flex";
+    subDiv.style.justifyContent = "center"
     let container = document.getElementById("container");
     for (i = 0; i < allChar.length; i++) {
       if(allChar[i] == ' ') {
         container && container.appendChild(subDiv);
         subDiv = document.createElement("div");
         subDiv.style.display = "flex";
+        subDiv.style.justifyContent = "center"
       } else {
         this.createSpanElement(subDiv, this.allAlphabetsInStar()(allChar[i]),"green")
       }
