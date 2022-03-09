@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { NameFormatComponent } from './name-format/name-format.component';
+import { QuationsComponent } from './quations/quations.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NameFormatComponent
+    NameFormatComponent,
+    QuationsComponent
   ],
   imports: [
     BrowserModule,

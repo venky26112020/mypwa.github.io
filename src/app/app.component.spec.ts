@@ -32,10 +32,4 @@ describe('AppComponent', () => {
     const compiled = fixture.nativeElement;
    // expect(compiled.querySelector('.content span').textContent).toContain('PWALift app is running!');
   });
-  it('My first test which is writing', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    const value = app.clickME(10);
-    expect(value).toEqual(11);
-  });
 });

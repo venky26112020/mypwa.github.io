@@ -9,8 +9,8 @@ export class NameFormatComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.allAlphabetsInStar();
-    this.callingFunction();
+    //this.allAlphabetsInStar();
+    this.createElementFunction();
   }
 
   // JavaScript implementation to print the
@@ -608,15 +608,6 @@ export class NameFormatComponent implements OnInit {
     return printPattern;
   }
 
-  // public createElementToShow(innerHTML = "", color = "red") {
-  //   let container = document.getElementById("container");
-  //   let content = document.createElement("span");
-  //   content.style.color = color;
-  //   content.style.margin = '16px';
-  //   content.innerHTML = innerHTML;
-  //   container && container.appendChild(content);
-  // }
-
   private createSpanElement(div:HTMLDivElement ,innerHTML = "", color = "red") {
     let content = document.createElement("span");
     content.style.color = color;
@@ -624,8 +615,10 @@ export class NameFormatComponent implements OnInit {
     content.innerHTML = innerHTML;
     div && div.appendChild(content);
   }
-  public callingFunction() {
+  public createElementFunction() {
     let allChar = "WISH YOU MANY MORE HAPPY RETURN OF THE DAY "
+    let allColors = ['red','green','blue','black','magenta',"orange",'gold','rust','purple']
+    let colorId = 0;
     let i, subDiv:HTMLDivElement= document.createElement("div");
     subDiv.style.display = "flex";
     subDiv.style.justifyContent = "center"
@@ -636,8 +629,9 @@ export class NameFormatComponent implements OnInit {
         subDiv = document.createElement("div");
         subDiv.style.display = "flex";
         subDiv.style.justifyContent = "center"
+        colorId += 1;
       } else {
-        this.createSpanElement(subDiv, this.allAlphabetsInStar()(allChar[i]),"green")
+        this.createSpanElement(subDiv, this.allAlphabetsInStar()(allChar[i]),allColors[colorId])
       }
     }
   }
