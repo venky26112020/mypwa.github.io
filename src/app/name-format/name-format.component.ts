@@ -6,20 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./name-format.component.css']
 })
 export class NameFormatComponent implements OnInit {
-  public pattrenWithName: string = ""
   constructor() { }
 
   ngOnInit(): void {
     this.allAlphabetsInStar();
     this.callingFunction();
-  }
-  
-  public createElementToShow() {
-    let container = document.getElementById("container");
-    let content = document.createElement("span");
-    content.style.color = "red";
-    content.innerHTML = this.pattrenWithName;
-    container && container.appendChild(content);
   }
 
   // JavaScript implementation to print the
@@ -616,14 +607,37 @@ export class NameFormatComponent implements OnInit {
     }
     return printPattern;
   }
+
+  // public createElementToShow(innerHTML = "", color = "red") {
+  //   let container = document.getElementById("container");
+  //   let content = document.createElement("span");
+  //   content.style.color = color;
+  //   content.style.margin = '16px';
+  //   content.innerHTML = innerHTML;
+  //   container && container.appendChild(content);
+  // }
+
+  private createSpanElement(div:HTMLDivElement ,innerHTML = "", color = "red") {
+    let content = document.createElement("span");
+    content.style.color = color;
+    content.style.margin = '16px';
+    content.innerHTML = innerHTML;
+    div && div.appendChild(content);
+  }
   public callingFunction() {
-    let allChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    let i;
+    let allChar = "ABCDEFGHI JKLMNOPQRS TUVWXYZ "
+    let i, subDiv:HTMLDivElement= document.createElement("div");
+    subDiv.style.display = "flex";
+    let container = document.getElementById("container");
     for (i = 0; i < allChar.length; i++) {
-      this.pattrenWithName += this.allAlphabetsInStar()(allChar[i])
-      this.pattrenWithName += '<br/>'
+      if(allChar[i] == ' ') {
+        container && container.appendChild(subDiv);
+        subDiv = document.createElement("div");
+        subDiv.style.display = "flex";
+      } else {
+        this.createSpanElement(subDiv, this.allAlphabetsInStar()(allChar[i]),"green")
+      }
     }
-    this.createElementToShow();
   }
   // This code is contributed by Krishna
 
