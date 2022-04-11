@@ -611,7 +611,7 @@ export class NameFormatComponent implements OnInit {
   private createSpanElement(div:HTMLDivElement ,innerHTML = "", color = "red") {
     let content = document.createElement("span");
     content.style.color = color;
-    content.style.margin = '16px';
+    content.style.margin = '10px';
     content.innerHTML = innerHTML;
     div && div.appendChild(content);
   }

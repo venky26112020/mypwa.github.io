@@ -7,7 +7,7 @@ import { QuationsComponent } from './quations/quations.component';
 const routes: Routes = [
   {
     path: "",
-    redirectTo: "quatations",
+    redirectTo: "wishes",
     pathMatch: "full",
   },
   {
